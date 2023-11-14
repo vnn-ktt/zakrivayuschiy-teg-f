@@ -2,11 +2,11 @@
 
 ## Описание
 
-В этом проекте представлен веб-сайт, демонстрирующий мои навыки на октябрь 2023 года.
+В этом проекте представлен веб-сайт, демонстрирующий мои навыки на ноябрь 2023 года.
 
 ## Технологии
 
--  Native HTML, <svg>
+-  Native HTML, SVG
 -  Native CSS: Flexbox and Grid Layout, @media, @container
 -  Native JavaScript
 -  Adaptive design: Responsive Images, Mobile-First Design, Desktop-first Design, Retina Graphics, Progressive Improvement
