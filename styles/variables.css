@@ -1,1 +1,46 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+	--inline-size-mobile: 23.4375rem;
+	--inline-size-desktop: 90rem;
+	--page-gap: 100px;
+	--adaptive-gap: 25px;
+
+	--font-main: 'Inter-Variable', Arial, sans-serif;
+	--font-accent: 'PressStart2P', monospace, serif;
+	--font-weight-normal: 400;
+	--font-weight-accent: 700;
+	--text-stroke-color: #fff;
+
+	--color: #000;
+	--color-accent: #666666;
+	--bg-color: #fff;
+	--bg-grid-color: #d3d3d3;
+	--bg-saturation-color1: #e7e7e7;
+	--bg-saturation-color2: #1a1a1a;
+	--bg-page: repeating-linear-gradient(
+			90deg,
+			var(--bg-grid-color),
+			var(--bg-grid-color) 2px,
+			transparent 2px,
+			transparent 4px
+		),
+		repeating-linear-gradient(
+			180deg,
+			var(--bg-grid-color),
+			var(--bg-grid-color) 2px,
+			transparent 2px,
+			transparent 4px
+		),
+		linear-gradient(
+			180deg,
+			var(--bg-saturation-color1) 0.01%,
+			var(--bg-saturation-color2)
+		);
+	--bg-img-container: radial-gradient(
+		circle at 50% 50%,
+		#888 0%,
+		#666 35%,
+		#444 65%,
+		#222 95%,
+		#222 100%
+	);
+}

@@ -1,15 +1,15 @@
-/* В этом файле уже написаны некоторые базовые стили, которые сбрасывают или преобразуют дефольное браузерное поведение.
-Здесь же лежит утилитарный класс visually-hidden на случай, если нужно скрыть какой-то элемент, но оставить доступным для скринридера.
-Вы можете изменять этот файл или дополнять. Но скорее всего, вам это не потребуется. */
-
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 16px;
 }
 
 body {
-  margin: 0;
+	margin: 0 auto;
 }
 
 h1,
@@ -22,32 +22,39 @@ p,
 ul,
 ol,
 li {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 a {
-  color: inherit;
+	color: inherit;
+	cursor: pointer;
 }
 
 button,
 input {
-  color: currentColor;
-  font-family: inherit;
-  font-size: inherit;
+	color: currentColor;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
 }
 
 ul,
 ol {
-  list-style: none;
+	list-style: none;
+}
+
+figure {
+	margin-block: 0;
+	margin-inline: 0;
 }
 
 .visually-hidden {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
+	position: absolute;
+	inline-size: 1px;
+	block-size: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
 }

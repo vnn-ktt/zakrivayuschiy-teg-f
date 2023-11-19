@@ -1,6 +1,41 @@
-/* В этом файле вы опишете значения переменных в разных цветовых схемах.
-Придерживайтесь такого именования классов:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
-*/
+:root.theme-dark {
+	--font-weight-normal: 465;
+	--font-weight-accent: 785;
+	--text-stroke-color: #000;
+	--color: #00cc14;
+	--color-accent: #007a0c;
+	--bg-color: #000;
+	--bg-grid-color: #000;
+	--bg-saturation-color1: #007f0c;
+	--bg-saturation-color2: #004306;
+	--bg-img-container: radial-gradient(
+		circle at 50% 50%,
+		#006400 0%,
+		#004d00 35%,
+		#003300 65%,
+		#001a00 95%,
+		#001a00 100%
+	);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root.theme-auto {
+		--font-weight-normal: 465;
+		--font-weight-accent: 785;
+		--text-stroke-color: #000;
+		--color: #00cc14;
+		--color-accent: #007a0c;
+		--bg-color: #000;
+		--bg-grid-color: #000;
+		--bg-saturation-color1: #007f0c;
+		--bg-saturation-color2: #004306;
+		--bg-img-container: radial-gradient(
+			circle at 50% 50%,
+			#006400 0%,
+			#004d00 35%,
+			#003300 65%,
+			#001a00 95%,
+			#001a00 100%
+		);
+	}
+}
