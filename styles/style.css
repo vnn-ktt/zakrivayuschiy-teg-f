@@ -8,7 +8,8 @@
 	font-family: Arial, sans-serif;
 	font-weight: var(--font-weight-normal);
 	color: var(--color);
-	background: var(--bg-page) center / cover no-repeat fixed;
+	background: var(--bg-page) center / cover no-repeat;
+	background-attachment: fixed;
 }
 
 @supports (font-variation-settings: normal) {
@@ -80,13 +81,14 @@
 
 .post {
 	inline-size: 100%;
-	max-inline-size: 696px;
+	max-inline-size: 698px;
 	border: 2px solid currentColor;
 	background-color: var(--bg-color);
 }
 
 .post__title {
-	padding: 4px 10px 6px;
+	border-block-end: 2px solid currentColor;
+	padding: 5px 10px;
 	font-family: var(--font-main);
 	font-size: 18px;
 	font-weight: var(--font-weight-accent);
@@ -96,15 +98,12 @@
 
 @media screen and (width >= 90rem) {
 	.post__title {
-		padding: 3px 10px;
+		padding: 6px 10px;
 	}
 }
 
 .post__img-container {
 	position: relative;
-	border-block-width: 2px;
-	border-block-color: currentColor;
-	border-block-style: solid;
 	inline-size: 100%;
 	aspect-ratio: 1 / 1;
 	background-image: var(--bg-img-container);
@@ -172,11 +171,20 @@
 	}
 }
 
+@media screen and (width >= 90rem) {
+	.post__img-watermark {
+		inset-inline-end: 23px;
+		inset-block-start: 27px;
+	}
+}
+
 .post__text-content {
-	padding: var(--section-gap);
+	border-block-start: 2px solid currentColor;
+	padding: var(--content-gap);
 }
 
 .post__paragraph {
+	overflow-wrap: break-word;
 	font-size: 18px;
 	line-height: 21px;
 }
@@ -225,9 +233,8 @@
 	color: currentColor;
 }
 
-.footer {
-	display: grid;
-	place-items: center;
+.footer__inner {
+	margin-block-start: -50px;
 }
 
 .save-button {
@@ -235,16 +242,33 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	row-gap: 8px;
+	gap: 8px;
 	padding: 15px 20px;
 	border: 2px solid currentColor;
 	inline-size: max-content;
 	background: var(--bg-color);
 }
 
+@media screen and (width >= 90rem) {
+	.save-button {
+		flex-direction: row;
+	}
+}
+
 .save-button__icon {
-	inline-size: 28px;
-	block-size: 28px;
+	min-inline-size: 28px;
+	min-block-size: 28px;
+	max-inline-size: 28px;
+	max-block-size: 28px;
+}
+
+@media screen and (width >= 90rem) {
+	.save-button__icon {
+		min-inline-size: 21px;
+		min-block-size: 21px;
+		max-inline-size: 21px;
+		max-block-size: 21px;
+	}
 }
 
 .save-button__text {
