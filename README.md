@@ -7,7 +7,7 @@
 ## Технологии
 
 -  Native HTML, SVG
--  Native CSS: Flexbox and Grid Layout, @media, @container, @keyframes, Animations
+-  Native CSS: Flexbox and Grid Layout, @media, @keyframes, Animations
 -  Native JavaScript
 -  Adaptive design: Responsive Images, Mobile-First Design, Desktop-first Design, Retina Graphics, Progressive Improvement
 

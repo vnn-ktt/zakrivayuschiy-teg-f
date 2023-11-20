@@ -5,10 +5,10 @@
 	padding-block: var(--page-gap);
 	min-inline-size: var(--inline-size-mobile);
 	max-inline-size: var(--inline-size-desktop);
-	background: var(--bg-page) center / cover no-repeat fixed;
 	font-family: Arial, sans-serif;
 	font-weight: var(--font-weight-normal);
 	color: var(--color);
+	background: var(--bg-page) center / cover no-repeat fixed;
 }
 
 @supports (font-variation-settings: normal) {
@@ -73,42 +73,44 @@
 	content: '▶';
 }
 
-.cards {
-	display: grid;
-	place-items: center;
-	row-gap: 50px;
-}
-
-.cards__cards-list {
+.posts__list {
 	display: grid;
 	row-gap: 50px;
 }
 
-.card {
+.post {
 	inline-size: 100%;
 	max-inline-size: 696px;
 	border: 2px solid currentColor;
 	background-color: var(--bg-color);
 }
 
-.card__title {
-	padding: 3px 10px 6px;
+.post__title {
+	padding: 4px 10px 6px;
 	font-family: var(--font-main);
 	font-size: 18px;
 	font-weight: var(--font-weight-accent);
-	line-height: 22px;
+	line-height: normal;
 	color: currentColor;
 }
 
-.card__img-container {
+@media screen and (width >= 90rem) {
+	.post__title {
+		padding: 3px 10px;
+	}
+}
+
+.post__img-container {
 	position: relative;
-	border-block: 2px solid currentColor;
+	border-block-width: 2px;
+	border-block-color: currentColor;
+	border-block-style: solid;
 	inline-size: 100%;
 	aspect-ratio: 1 / 1;
 	background-image: var(--bg-img-container);
 }
 
-.card__img-elem {
+.post__img-elem {
 	position: relative;
 	display: block;
 	inline-size: 100%;
@@ -144,7 +146,7 @@
 	filter: hue-rotate(100deg) blur(1px) opacity(80%);
 }
 
-.card__img-watermark {
+.post__img-watermark {
 	display: inline;
 	position: absolute;
 	z-index: 1;
@@ -164,32 +166,30 @@
 	(text-stroke: 1px var(--text-stroke-color)) or
 		(-webkit-text-stroke: 1px var(--text-stroke-color))
 ) {
-	.card__img-watermark {
+	.post__img-watermark {
 		-webkit-text-stroke: 1px var(--text-stroke-color);
 		text-shadow: none;
 	}
 }
 
-.card__text-content {
-	padding: var(--adaptive-gap);
+.post__text-content {
+	padding: var(--section-gap);
 }
 
-.card__paragraph {
-	font-family: var(--font-main);
+.post__paragraph {
 	font-size: 18px;
 	line-height: 21px;
-	color: currentColor;
 }
 
-.card__paragraph:not(:last-of-type) {
+.post__paragraph:not(:last-of-type) {
 	margin-block-end: 27px;
 }
 
-.card__paragraph:last-of-type {
+.post__paragraph:last-of-type {
 	margin-block-end: 25px;
 }
 
-.card__action {
+.post__action {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -197,7 +197,7 @@
 	block-size: 38px;
 }
 
-.card__icon-button {
+.post__icon-button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -208,7 +208,7 @@
 	border: none;
 }
 
-.card__like-button {
+.post__like-button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -225,7 +225,12 @@
 	color: currentColor;
 }
 
-.cards__button {
+.footer {
+	display: grid;
+	place-items: center;
+}
+
+.save-button {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -237,12 +242,12 @@
 	background: var(--bg-color);
 }
 
-.cards__button-icon {
+.save-button__icon {
 	inline-size: 28px;
 	block-size: 28px;
 }
 
-.cards__button-text {
+.save-button__text {
 	font-family: var(--font-accent);
 	font-size: 14px;
 	font-style: normal;
