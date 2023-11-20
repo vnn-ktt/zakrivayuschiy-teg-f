@@ -113,7 +113,7 @@
 									Место для ваших воспоминаний о начале обучения.
 								</p>
 								<div class="post__action">
-									<button class="post__icon-button">
+									<button class="post__icon-button button">
 										<svg
 											width="39"
 											height="36"
@@ -149,8 +149,8 @@
 											</defs>
 										</svg>
 									</button>
-									<button class="post__like-button">
-										<span class="button-text">Like</span>
+									<button class="post__like-button button">
+										<span class="button__text button-text">Like</span>
 									</button>
 								</div>
 							</div>
@@ -190,7 +190,7 @@
 									Место для ваших воспоминаний о начале первого спринта.
 								</p>
 								<div class="post__action">
-									<button class="post__icon-button">
+									<button class="post__icon-button button">
 										<svg
 											width="39"
 											height="36"
@@ -226,8 +226,8 @@
 											</defs>
 										</svg>
 									</button>
-									<button class="post__like-button">
-										<span class="button-text">Like</span>
+									<button class="post__like-button button">
+										<span class="button__text button-text">Like</span>
 									</button>
 								</div>
 							</div>
@@ -267,7 +267,7 @@
 									Место для ваших воспоминаний об окончании первого спринта.
 								</p>
 								<div class="post__action">
-									<button class="post__icon-button">
+									<button class="post__icon-button button">
 										<svg
 											width="39"
 											height="36"
@@ -303,8 +303,8 @@
 											</defs>
 										</svg>
 									</button>
-									<button class="post__like-button">
-										<span class="button-text">Like</span>
+									<button class="post__like-button button">
+										<span class="button__text button-text">Like</span>
 									</button>
 								</div>
 							</div>
@@ -344,7 +344,7 @@
 									Место для ваших воспоминаний о начале второго спринта.
 								</p>
 								<div class="post__action">
-									<button class="post__icon-button">
+									<button class="post__icon-button button">
 										<svg
 											width="39"
 											height="36"
@@ -380,8 +380,8 @@
 											</defs>
 										</svg>
 									</button>
-									<button class="post__like-button">
-										<span class="button-text">Like</span>
+									<button class="post__like-button button">
+										<span class="button__text button-text">Like</span>
 									</button>
 								</div>
 							</div>
@@ -421,7 +421,7 @@
 									Место для ваших воспоминаний об окончании второго спринта.
 								</p>
 								<div class="post__action">
-									<button class="post__icon-button">
+									<button class="post__icon-button button">
 										<svg
 											width="39"
 											height="36"
@@ -457,8 +457,8 @@
 											</defs>
 										</svg>
 									</button>
-									<button class="post__like-button">
-										<span class="button-text">Like</span>
+									<button class="post__like-button button">
+										<span class="button__text button-text">Like</span>
 									</button>
 								</div>
 							</div>
@@ -498,7 +498,7 @@
 									Место для ваших воспоминаний о начале третьего спринта.
 								</p>
 								<div class="post__action">
-									<button class="post__icon-button">
+									<button class="post__icon-button button">
 										<svg
 											width="39"
 											height="36"
@@ -534,8 +534,8 @@
 											</defs>
 										</svg>
 									</button>
-									<button class="post__like-button">
-										<span class="button-text">Like</span>
+									<button class="post__like-button button">
+										<span class="button__text button-text">Like</span>
 									</button>
 								</div>
 							</div>
@@ -575,7 +575,7 @@
 									Место для ваших воспоминаний об окончании третьего спринта.
 								</p>
 								<div class="post__action">
-									<button class="post__icon-button">
+									<button class="post__icon-button button">
 										<svg
 											width="39"
 											height="36"
@@ -611,8 +611,8 @@
 											</defs>
 										</svg>
 									</button>
-									<button class="post__like-button">
-										<span class="button-text">Like</span>
+									<button class="post__like-button button">
+										<span class="button__text button-text">Like</span>
 									</button>
 								</div>
 							</div>
@@ -652,7 +652,7 @@
 									Место, чтобы остановиться, подумать и написать, что вы чувствуете в этой точке пути.
 								</p>
 								<div class="post__action">
-									<button class="post__icon-button">
+									<button class="post__icon-button button">
 										<svg
 											width="39"
 											height="36"
@@ -688,8 +688,8 @@
 											</defs>
 										</svg>
 									</button>
-									<button class="post__like-button">
-										<span class="button-text">Like</span>
+									<button class="post__like-button button">
+										<span class="button__text button-text">Like</span>
 									</button>
 								</div>
 							</div>
@@ -700,11 +700,27 @@
 		</main>
 		<footer class="footer">
 			<div class="footer__inner">
-				<button class="footer__button save-button">
+				<dialog class="modal" id="modal-window">
+					<div class="modal__title-container">
+						<svg class="modal__icon" viewBox="0 0 39 39">
+							<use href="./svg/floppy.svg#svg-floppy">
+						</svg>
+						<h2 class="modal__title">Вставьте дискету, чтобы продолжить</h2>
+					</div>
+					<form>
+						 <button class="modal__button button" type="submit"><span class="button-text">Ок</span></button>
+					</form>
+			   </dialog> 
+				<button     
+					type="button" 
+					onclick="window['modal-window'].showModal()" 
+					aria-controls="modal-window"
+					class="save-button button"
+				>
 					<svg class="save-button__icon" viewBox="0 0 39 39">
 						<use href="./svg/floppy.svg#svg-floppy">
 					</svg>
-					<span class="save-button__text">Сохранить на память</span>
+					<span class="button-text">Сохранить на память</span>
 				</button>			
 			</div>
 		</footer>
