@@ -1,9 +1,4 @@
 :root {
-	--inline-size-mobile: 23.4375rem;
-	--inline-size-desktop: 90rem;
-	--page-gap: 100px;
-	--content-gap: 25px;
-
 	--font-main: 'Inter-Variable', Arial, sans-serif;
 	--font-accent: 'PressStart2P', monospace, serif;
 	--font-weight-normal: 400;
@@ -12,6 +7,7 @@
 
 	--color: #000;
 	--color-accent: #666666;
+	--color-invert: #fff;
 	--bg-color: #fff;
 	--bg-grid-color: #d3d3d3;
 	--bg-saturation-color1: #e7e7e7;

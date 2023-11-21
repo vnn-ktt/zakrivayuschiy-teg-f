@@ -12,3 +12,12 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes pointer-move {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(4px);
+	}
+}

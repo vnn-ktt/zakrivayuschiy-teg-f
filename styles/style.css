@@ -1,10 +1,10 @@
 .page {
 	display: grid;
 	place-items: center;
-	row-gap: var(--page-gap);
-	padding-block: var(--page-gap);
-	min-inline-size: var(--inline-size-mobile);
-	max-inline-size: var(--inline-size-desktop);
+	row-gap: 100px;
+	padding-block: 100px;
+	min-inline-size: 23.4375rem;
+	max-inline-size: 90rem;
 	font-family: Arial, sans-serif;
 	font-weight: var(--font-weight-normal);
 	color: var(--color);
@@ -15,7 +15,6 @@
 @supports (font-variation-settings: normal) {
 	.page {
 		font-family: var(--font-main);
-		font-variation-settings: 'wgth' var(--font-weight-normal);
 	}
 }
 
@@ -23,7 +22,7 @@
 	display: grid;
 	place-items: center;
 	padding-block-start: clamp(118px, 17.7vw, 134px);
-	padding-block-end: 25px;
+	padding-block-end: 20px;
 	border: 2px solid currentColor;
 	inline-size: 100%;
 	max-inline-size: 700px;
@@ -48,46 +47,96 @@
 	font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
+.header__theme-menu {
+	position: relative;
+	left: 10px;
+}
+
 .theme-menu__list {
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
+	gap: 11px;
+}
+
+.theme-menu__item {
+	position: relative;
+}
+
+.theme-menu__item:has(.theme-menu__button[disabled])::before {
+	position: absolute;
+	left: -22px;
+	top: -1px;
+	content: '▶';
+	font-family: var(--font-accent);
+	color: var(--color-accent);
+	animation: pointer-move 0.5s ease-in-out infinite alternate;
+}
+
+@media screen and (width <= 23.4375rem) {
+	.theme-menu__item:has(.theme-menu__button[disabled])::before {
+		left: -19px;
+	}
 }
 
 .theme-menu__button {
+	position: relative;
 	display: flex;
+	justify-items: flex-start;
 	padding: 0;
-	padding-inline-start: 19px;
+	block-size: 18px;
 	border: none;
 	background: none;
 	font-family: var(--font-accent);
 	font-size: 14px;
 	text-transform: uppercase;
+	overflow: hidden;
+	transition: 0.3s ease color;
+}
+
+.theme-menu__button::after {
+	position: absolute;
+	left: -100%;
+	bottom: 0px;
+	display: block;
+	content: '';
+	inline-size: 200%;
+	block-size: 2px;
+	background-color: var(--color-accent);
+	transform: scaleX(0);
+	transition: 0.3s ease transform;
 }
 
 .theme-menu__button[disabled] {
-	padding-inline-start: 0;
+	color: var(--color-accent);
+	pointer-events: none;
+}
+
+.theme-menu__button:hover {
 	color: var(--color-accent);
 }
 
-.theme-menu__button[disabled]::before {
-	padding-inline-end: 0.5ex;
-	content: '▶';
+.theme-menu__button:focus {
+	outline: none;
+	color: var(--color-accent);
 }
 
-.posts__list {
+.theme-menu__button:focus-visible::after {
+	transform: scaleX(1);
+}
+
+.cards__list {
 	display: grid;
 	row-gap: 50px;
 }
 
-.post {
+.card {
 	inline-size: 100%;
 	max-inline-size: 698px;
 	border: 2px solid currentColor;
 	background-color: var(--bg-color);
 }
 
-.post__title {
+.card__title {
 	border-block-end: 2px solid currentColor;
 	padding: 5px 10px;
 	font-family: var(--font-main);
@@ -98,25 +147,25 @@
 }
 
 @supports (font-variation-settings: 'wgth' var(--font-weight-accent)) {
-	.post__title {
+	.card__title {
 		font-variation-settings: 'wgth' var(--font-weight-accent);
 	}
 }
 
 @media screen and (width >= 90rem) {
-	.post__title {
+	.card__title {
 		padding: 6px 10px;
 	}
 }
 
-.post__img-container {
+.card__img-container {
 	position: relative;
 	inline-size: 100%;
 	aspect-ratio: 1 / 1;
 	background-image: var(--bg-img-container);
 }
 
-.post__img-elem {
+.card__img-elem {
 	position: relative;
 	display: block;
 	inline-size: 100%;
@@ -152,7 +201,7 @@
 	filter: hue-rotate(100deg) blur(1px) opacity(80%);
 }
 
-.post__img-watermark {
+.card__img-watermark {
 	display: inline;
 	position: absolute;
 	z-index: 1;
@@ -172,39 +221,39 @@
 	(text-stroke: 1px var(--text-stroke-color)) or
 		(-webkit-text-stroke: 1px var(--text-stroke-color))
 ) {
-	.post__img-watermark {
+	.card__img-watermark {
 		-webkit-text-stroke: 1px var(--text-stroke-color);
 		text-shadow: none;
 	}
 }
 
 @media screen and (width >= 90rem) {
-	.post__img-watermark {
+	.card__img-watermark {
 		inset-inline-end: 23px;
-		inset-block-start: 27px;
+		inset-block-start: 24px;
 	}
 }
 
-.post__text-content {
+.card__text-content {
 	border-block-start: 2px solid currentColor;
-	padding: var(--content-gap);
+	padding: 25px;
 }
 
-.post__paragraph {
+.card__paragraph {
 	overflow-wrap: break-word;
 	font-size: 18px;
 	line-height: 21px;
 }
 
-.post__paragraph:not(:last-of-type) {
+.card__paragraph:not(:last-of-type) {
 	margin-block-end: 27px;
 }
 
-.post__paragraph:last-of-type {
+.card__paragraph:last-of-type {
 	margin-block-end: 25px;
 }
 
-.post__action {
+.card__action {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -219,7 +268,7 @@
 	border: 2px solid currentColor;
 }
 
-.post__icon-button {
+.card__icon-button {
 	padding: 0;
 	inline-size: 27px;
 	block-size: 24px;
@@ -227,12 +276,46 @@
 	border: none;
 }
 
-.post__like-button {
+.card__like-button {
+	position: relative;
 	padding: 10.5px 35px;
 	background: none;
+	transition: 0.3s ease box-shadow;
+	overflow: hidden;
+}
+
+.card__like-button .button-text {
+	color: var(--color-invert);
+	mix-blend-mode: difference;
+}
+
+.card__like-button::before {
+	position: absolute;
+	z-index: 1;
+	content: '';
+	inline-size: 100%;
+	block-size: 100%;
+	background-color: currentColor;
+	transition: 0.5s ease-in-out transform;
+	transform: translateX(-100%);
+}
+
+.card__like-button:hover::before {
+	transform: translateX(0);
+}
+
+.card__like-button:focus {
+	outline: none;
+}
+
+.card__like-button:focus-visible {
+	box-shadow: 2px 2px 0px 0px currentColor;
 }
 
 .button-text {
+	position: relative;
+	z-index: 2;
+	min-inline-size: 84px;
 	font-family: var(--font-accent);
 	font-size: 14px;
 	font-style: normal;
@@ -245,17 +328,47 @@
 }
 
 .save-button {
+	position: relative;
 	flex-direction: column;
 	gap: 8px;
 	padding: 15px 20px;
 	inline-size: max-content;
 	background: var(--bg-color);
+	transition: 0.3s ease box-shadow;
+	overflow: hidden;
 }
 
 @media screen and (width >= 90rem) {
 	.save-button {
 		flex-direction: row;
 	}
+}
+
+.save-button::before {
+	position: absolute;
+	content: '';
+	inline-size: 100%;
+	block-size: 100%;
+	background-color: currentColor;
+	transition: 0.5s ease-in-out transform;
+	transform: translateX(-100%);
+}
+
+.save-button .button-text {
+	color: var(--color-invert);
+	mix-blend-mode: difference;
+}
+
+.save-button:hover::before {
+	transform: translateX(0);
+}
+
+.save-button:focus {
+	outline: none;
+}
+
+.save-button:focus-visible {
+	box-shadow: 2px 2px 0px 0px currentColor;
 }
 
 .save-button__icon {

@@ -3,6 +3,7 @@
 	--font-weight-accent: 785;
 	--text-stroke-color: #000;
 	--color: #00cc14;
+	--color-invert: #00cc14;
 	--color-accent: #007a0c;
 	--bg-color: #000;
 	--bg-grid-color: #000;
@@ -24,6 +25,7 @@
 		--font-weight-accent: 785;
 		--text-stroke-color: #000;
 		--color: #00cc14;
+		--color-invert: #00cc14;
 		--color-accent: #007a0c;
 		--bg-color: #000;
 		--bg-grid-color: #000;
