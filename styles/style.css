@@ -230,6 +230,71 @@
   block-size: 24px;
 }
 
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation-name: heart-scale;
+  animation-duration: 0.3s;
+  animation-delay: 0.1s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.like-icon .core {
+  transition: 0.3s linear fill;
+}
+
+.like-icon:hover .core {
+  transition: 0.3s 0.05s linear fill;
+  fill: var(--color);
+}
+
+.like-icon:active .core {
+  transition: 0.3s 0.05s linear fill;
+  fill: var(--сolor-fill-heart);
+}
+
+.like-icon .cross {
+  transition: 0.3s 0.03s linear fill;
+}
+
+.like-icon:hover .cross {
+  transition: 0.3s linear fill;
+  fill: var(--color);
+}
+
+.like-icon:active .cross {
+  transition: 0.3s linear fill;
+  fill: var(--сolor-fill-heart);
+}
+
+.like-icon.is-liked .core,
+.like-icon.is-liked .cross {
+  fill: var(--сolor-fill-heart);
+}
+
+.like-icon .contour {
+  transition: 0.3s 0.06s linear fill;
+}
+
+.like-icon.is-liked .contour {
+  transition: 0.1 linear fill;
+  fill: var(--сolor-fill-heart);
+}
+
+.like-icon .sparks {
+  opacity: 0;
+}
+
+.like-icon.is-liked .sparks {
+  animation-name: heart-sparks-opacity;
+  animation-duration: 0.3s;
+  animation-delay: 0.3s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
 .card__like-button {
   position: relative;
   justify-content: center;
@@ -332,8 +397,12 @@
 }
 
 .save-button__icon {
+  position: relative;
+  z-index: 2;
   inline-size: 28px;
   block-size: 28px;
+  color: var(--color-button-animation);
+  mix-blend-mode: difference;
 }
 
 .save-button__text {
@@ -353,7 +422,7 @@
   }
 }
 
-.modal {
+.modal[open] {
   display: grid;
   gap: 30px;
   padding: 30px 40px;
@@ -361,11 +430,6 @@
   max-inline-size: 341px;
   background-color: var(--color-accent);
   color: var(--color);
-}
-
-.modal:not([open]) {
-  pointer-events: none;
-  opacity: 0;
 }
 
 @media screen and (width >= 90rem) {
@@ -402,6 +466,7 @@
 }
 
 .modal__button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -410,6 +475,23 @@
   padding: 9px 17px;
   background-color: var(--color-accent);
   transition: 0.3s ease box-shadow;
+  overflow: hidden;
+}
+
+.modal__button::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: '';
+  min-inline-size: 257px;
+  min-block-size: 31px;
+  background-color: currentColor;
+  transition: 0.5s ease-in-out transform;
+  transform: translateX(-100%);
+}
+
+.modal__button:hover::before {
+  transform: translateX(0);
 }
 
 .modal__button:focus {
@@ -421,8 +503,12 @@
 }
 
 .modal__button-text {
+  position: relative;
+  z-index: 2;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 90%;
+  color: var(--color-button-animation);
+  mix-blend-mode: difference;
 }
