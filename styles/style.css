@@ -28,7 +28,7 @@
   font-family: var(--font-accent, serif);
   font-weight: 400;
   text-align: center;
-  text-transform: uppercase; /*watermark + save button*/
+  text-transform: uppercase;
 }
 
 .header__logo {
