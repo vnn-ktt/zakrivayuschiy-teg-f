@@ -1,8 +1,6 @@
 function changeTheme(theme) {
   document.documentElement.className = '';
-  document.documentElement.classList.add(
-    `theme-${theme}`
-  );
+  document.documentElement.classList.add(`theme-${theme}`);
   localStorage.setItem('theme', theme);
 }
 
@@ -15,9 +13,7 @@ function changeTheme(theme) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.documentElement;
-  const themeButtons = document.querySelectorAll(
-    '.theme-menu__button'
-  );
+  const themeButtons = document.querySelectorAll('.theme-menu__button');
 
   function setDisabled(theme) {
     themeButtons.forEach((item) => {
@@ -31,9 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if ([...root.classList].includes('theme-light')) {
     setDisabled('light');
-  } else if (
-    [...root.classList].includes('theme-dark')
-  ) {
+  } else if ([...root.classList].includes('theme-dark')) {
     setDisabled('dark');
   } else {
     setDisabled('auto');

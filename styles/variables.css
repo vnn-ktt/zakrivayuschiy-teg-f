@@ -4,7 +4,7 @@
   --font-weight-normal: 400;
   --font-weight-accent: 700;
   --color: #000;
-  --сolor-fill-heart: #ff0000;
+  --color-heart: #ff0000;
   --color-accent: #fff;
   --color-button-animation: #fff;
   --bg-figure: radial-gradient(
@@ -16,8 +16,8 @@
     #222 100%
   );
   --bg-grid-color: #d3d3d3;
-  --bg-saturation-color1: #e7e7e7;
-  --bg-saturation-color2: #1a1a1a;
+  --bg-saturation-color-start: #e7e7e7;
+  --bg-saturation-color-end: #1a1a1a;
   --bg-page: repeating-linear-gradient(
       90deg,
       var(--bg-grid-color),
@@ -34,7 +34,7 @@
     ),
     linear-gradient(
       180deg,
-      var(--bg-saturation-color1) 0.01%,
-      var(--bg-saturation-color2)
+      var(--bg-saturation-color-start) 0.01%,
+      var(--bg-saturation-color-end)
     );
 }

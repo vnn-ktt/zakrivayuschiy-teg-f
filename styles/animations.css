@@ -34,3 +34,21 @@
     opacity: 0;
   }
 }
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation-name: heart-scale;
+  animation-duration: 0.3s;
+  animation-delay: 0.1s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+}
+
+.like-icon.is-liked .sparks {
+  animation-name: heart-sparks-opacity;
+  animation-duration: 0.3s;
+  animation-delay: 0.3s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}

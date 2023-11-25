@@ -66,31 +66,3 @@ figure {
   clip-path: inset(50%);
   white-space: nowrap;
 }
-
-.filter-grayscale {
-  filter: grayscale(75%);
-}
-
-.filter-saturation {
-  filter: saturate(400%) brightness(80%);
-}
-
-.filter-hue-rotate {
-  filter: hue-rotate(295deg) saturate(70%);
-}
-
-.filter-invert {
-  filter: invert(10%);
-}
-
-.filter-sepia {
-  filter: sepia(70%) brightness(70%);
-}
-
-.filter-blured {
-  filter: blur(10px);
-}
-
-.filter-mix {
-  filter: hue-rotate(100deg) blur(1px) opacity(80%);
-}
