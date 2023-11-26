@@ -1,6 +1,5 @@
 .page {
   display: grid;
-  row-gap: 100px;
   padding-block: 100px;
   inline-size: clamp(23.4375rem, 100%, 43.75rem);
   font-family: var(--font-main, sans-serif);
@@ -11,7 +10,7 @@
 
 @supports (font-variation-settings: normal) {
   .page {
-    font-variation-settings: var(--font-weight-normal);
+    font-variation-settings: 'wgth' var(--font-weight-normal);
   }
 }
 
@@ -19,6 +18,7 @@
   display: grid;
   padding-block: clamp(118px, 17.7vw, 134px) 20px;
   inline-size: 100%;
+  margin-block-end: 100px;
   border: 2px solid currentColor;
   background-color: var(--color-accent);
 }
@@ -221,68 +221,20 @@
   justify-content: flex-end;
   align-items: center;
   margin-block-start: 26px;
-  gap: 12px;
+  gap: 6px;
 }
 
 .card__icon-button {
-  inline-size: 27px;
-  min-height: 24px;
+  inline-size: 39px;
+  min-height: 36px;
 }
 
 .card__icon-button:focus {
   outline: none;
 }
 
-.like-icon .core {
-  transition: 0.3s linear fill;
-}
-
-.like-icon:hover .core {
-  transition: 0.3s 0.05s linear fill;
-  fill: var(--color);
-}
-
-.like-icon:active .core {
-  transition: 0.3s 0.05s linear fill;
-  fill: var(--color-heart);
-}
-
-.like-icon .cross {
-  transition: 0.3s 0.03s linear fill;
-}
-
-.like-icon:hover .cross {
-  transition: 0.3s linear fill;
-  fill: var(--color);
-}
-
-.like-icon:active .cross {
-  transition: 0.3s linear fill;
-  fill: var(--color-heart);
-}
-
-.like-icon.is-liked .core,
-.like-icon.is-liked .cross {
-  transition: 0.3s linear fill;
-  fill: var(--color-heart);
-}
-
-.like-icon .contour {
-  transition-duration: 0.1s;
-  transition-timing-function: linear;
-  transition-property: fill;
-}
-
-.like-icon.is-liked .contour {
-  transition-duration: 0.3s;
-  transition-delay: 0.06s;
-  transition-timing-function: linear;
-  transition-property: fill;
-  fill: var(--color-heart);
-}
-
-.like-icon .sparks {
-  opacity: 0;
+.card__icon-button:focus-visible {
+  outline: 2px solid currentColor;
 }
 
 .button-common {
@@ -294,32 +246,35 @@
   overflow: hidden;
 }
 
-.card__like-button {
-  padding: 10.5px 21px;
+.button-common:focus {
+  outline: none;
 }
 
-.card__like-button::before {
+.button-common:focus-visible {
+  box-shadow: 2px 2px 0px 0px currentColor;
+}
+
+.button-common::before {
   position: absolute;
   inset: 0;
   z-index: 1;
   content: '';
-  inline-size: 100%;
-  block-size: 100%;
   background-color: currentColor;
   transition: 0.5s ease-in-out transform;
   transform: translateX(-100%);
 }
 
-.card__like-button:hover::before {
+.button-common:hover::before {
   transform: translateX(0);
 }
 
-.card__like-button:focus {
-  outline: none;
+.card__like-button {
+  padding: 10.5px 21px;
 }
 
-.card__like-button:focus-visible {
-  box-shadow: 2px 2px 0px 0px currentColor;
+.card__like-button::before {
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .button__text {
@@ -345,27 +300,8 @@
 }
 
 .save-button::before {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  content: '';
   min-inline-size: 306px;
   min-block-size: 80px;
-  background-color: currentColor;
-  transition: 0.5s ease-in-out transform;
-  transform: translateX(-100%);
-}
-
-.save-button:hover::before {
-  transform: translateX(0);
-}
-
-.save-button:focus {
-  outline: none;
-}
-
-.save-button:focus-visible {
-  box-shadow: 2px 2px 0px 0px currentColor;
 }
 
 .save-button__icon {
@@ -429,27 +365,8 @@
 }
 
 .modal__button::before {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  content: '';
   min-inline-size: 257px;
   min-block-size: 31px;
-  background-color: currentColor;
-  transition: 0.5s ease-in-out transform;
-  transform: translateX(-100%);
-}
-
-.modal__button:hover::before {
-  transform: translateX(0);
-}
-
-.modal__button:focus {
-  outline: none;
-}
-
-.modal__button:focus-visible {
-  box-shadow: 2px 2px 0px 0px currentColor;
 }
 
 .modal__button-text {
